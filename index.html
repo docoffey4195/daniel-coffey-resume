@@ -148,6 +148,12 @@
     color: var(--ivory);
     border-color: var(--navy);
   }
+  .contact-facts {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.82rem;
+    color: var(--slate);
+  }
 
   /* SECTIONS */
   section { padding: 64px 24px; }
@@ -221,6 +227,110 @@
     font-size: 0.9rem;
     color: rgba(247,244,236,0.88);
     margin-bottom: 6px;
+  }
+  .job-story {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(247,244,236,0.88);
+    margin: 0;
+  }
+  .job-story strong { color: var(--brass-light); font-weight: 600; }
+
+  /* PROJECTS */
+  .project-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+    margin-bottom: 14px;
+  }
+  .project-card:last-child { margin-bottom: 0; }
+  .project-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    margin-bottom: 4px;
+  }
+  .project-tag {
+    font-size: 0.72rem;
+    color: var(--brass);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+  .project-desc { font-size: 0.88rem; color: var(--slate); margin: 0; }
+  .project-empty {
+    border: 1px dashed var(--line);
+    border-radius: 8px;
+    padding: 30px 24px;
+    text-align: center;
+    color: var(--slate);
+    font-size: 0.88rem;
+  }
+
+  /* ORG DESCRIPTIONS */
+  .org-list li { display: block; }
+  .org-title { font-weight: 600; }
+  .org-desc {
+    display: block;
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: var(--slate);
+    margin-top: 3px;
+  }
+
+  /* SKILLS WITH CONTEXT */
+  .skill-item { margin-bottom: 12px; }
+  .skill-item:last-child { margin-bottom: 0; }
+  .skill-name {
+    font-size: 0.86rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .skill-context {
+    font-size: 0.8rem;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+
+  /* ROUTE / JOURNEY VISUAL */
+  .route-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    margin-top: 6px;
+  }
+  .route-stop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+  }
+  .route-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--brass);
+    flex-shrink: 0;
+  }
+  .route-stop.home .route-dot {
+    background: var(--navy);
+    width: 12px; height: 12px;
+    box-shadow: 0 0 0 3px rgba(177,144,79,0.25);
+  }
+  .route-name {
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+  .route-stop.home .route-name { font-weight: 700; }
+  .route-arrow {
+    color: var(--brass-light);
+    font-size: 0.8rem;
+    margin: 0 10px;
+    flex-shrink: 0;
   }
 
   /* EDUCATION */
@@ -296,6 +406,11 @@
     background: var(--white);
     border: 1px solid var(--line);
   }
+  .chip-progress {
+    border: 1px dashed var(--brass);
+    background: transparent;
+    color: var(--brass);
+  }
 
   /* ORGANIZATIONS */
   .org-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
@@ -340,6 +455,7 @@
       <a href="#education">Education</a>
       <a href="#abroad">Abroad</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -354,7 +470,7 @@
     <path d="M78 55 C 78 70, 66 78, 50 82" stroke="#b1904f" stroke-width="1" fill="none"/>
   </svg>
   <h1 id="about">Daniel Coffey</h1>
-  <div class="role-line">Finance &amp; Theological Studies &middot; MBA Student, Harding University</div>
+  <div class="role-line">Finance &amp; Theological Studies &middot; MBA Candidate, Harding University</div>
   <p class="profile-text">
     Motivated and detail-oriented student pursuing degrees in Finance and Theological Studies alongside an MBA.
     Committed to excellence in all endeavors, guided by a strong identity in Christ and a desire to serve others
@@ -363,9 +479,9 @@
   <div class="contact-row">
     <a class="contact-pill primary" href="mailto:Docoffey4195@gmail.com">Email me</a>
     <a class="contact-pill" href="https://www.linkedin.com/in/daniel-coffey1" target="_blank" rel="noopener">LinkedIn</a>
-    <span class="contact-pill">Bowling Green, KY</span>
-    <span class="contact-pill">(270) 938-2554</span>
+    <a class="contact-pill" href="Daniel_Coffey_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
   </div>
+  <div class="contact-facts">Bowling Green, KY &middot; (270) 938-2554</div>
 </header>
 
 <section id="experience">
@@ -385,13 +501,7 @@
           <span class="job-dates">May 2026 &ndash; Aug 2026</span>
         </div>
         <div class="job-meta">North Boulevard Church of Christ &middot; Murfreesboro, TN</div>
-        <ul>
-          <li>Led and taught a youth group of 200+ students, planning weekly programming, retreats, and service activities.</li>
-          <li>Coordinated logistics for multi-state and international trips, including events in Tennessee, Mexico, and New York City.</li>
-          <li>Delivered lessons and announcements to groups of 300+ attendees, building confidence and clarity in public speaking.</li>
-          <li>Organized project data, attendance records, and team assignments for mission trips and special-needs programs.</li>
-          <li>Improved organizational systems and communication workflows for future interns and staff.</li>
-        </ul>
+        <p class="job-story">This summer I stepped into leading a youth group of <strong>200+ students</strong> &mdash; planning weekly programming, retreats, and service projects, and speaking to crowds of 300+ on a regular basis. Public speaking wasn't natural for me at first, and by the end of the summer it was one of the things I felt most confident doing. I also handled the less visible side of ministry: coordinating logistics for trips across Tennessee, Mexico, and New York City, and managing attendance and program data for our special-needs ministry. Before I left, I rebuilt some of our internal workflows so the next intern wouldn't have to start from scratch &mdash; a small thing, but one I was proud of.</p>
       </div>
 
       <div class="job">
@@ -400,12 +510,7 @@
           <span class="job-dates">May 2025 &ndash; Jan 2026</span>
         </div>
         <div class="job-meta">Self-Employed &middot; Bowling Green, KY</div>
-        <ul>
-          <li>Independently completed large-scale commercial, residential, and office-facility painting projects.</li>
-          <li>Managed all estimates, scheduling, and materials procurement for every job.</li>
-          <li>Delivered consistent quality with strong attention to detail and safety standards.</li>
-          <li>Troubleshot paint-matching and on-site challenges to ensure smooth project completion.</li>
-        </ul>
+        <p class="job-story">Between semesters, I started a solo painting business &mdash; bidding, scheduling, sourcing materials, and doing the work itself across <strong>commercial, residential, and office-facility jobs</strong>. Running it alone taught me more about small-business operations than any class could: how to price a job accurately, manage a client relationship start to finish, and solve problems &mdash; paint-matching disputes, tight timelines &mdash; without anyone to hand them off to. It's the first time I was fully accountable for a business outcome, start to finish, on my own.</p>
       </div>
 
       <div class="job">
@@ -414,14 +519,7 @@
           <span class="job-dates">May 2022 &ndash; Aug 2024</span>
         </div>
         <div class="job-meta">Lifeguard Press &middot; Bowling Green, KY</div>
-        <ul>
-          <li>Collaborated across multiple departments, providing administrative and operational support.</li>
-          <li>Prepped products for sales, organized inventory, and supported daily warehouse operations.</li>
-          <li>Picked, packed, and shipped samples to representatives and customers; updated customer records in Great Plains.</li>
-          <li>Conducted quality and specification checks on overseas manufacturer samples (e.g. Hong Kong); logged results in Basecamp.</li>
-          <li>Assisted with daily account reconciliations and organized financial records.</li>
-          <li>Enhanced overall operational efficiency by managing responsibilities across departments and gaining cross-functional experience.</li>
-        </ul>
+        <p class="job-story">This was my first real look inside a company, and over <strong>two years</strong> I rotated through nearly every part of it &mdash; sales support, warehouse operations, and finance. I picked and shipped product samples, managed inventory, and ran quality checks on manufacturer samples from overseas vendors, including partners in Hong Kong. The part that stuck with me most, though, was updating customer records in Great Plains and helping with daily account reconciliations &mdash; it's honestly where my interest in the numbers side of business started.</p>
       </div>
 
       <div class="job">
@@ -430,12 +528,7 @@
           <span class="job-dates">Apr 2021 &ndash; May 2022</span>
         </div>
         <div class="job-meta">Beginnings Publishing &middot; Bowling Green, KY</div>
-        <ul>
-          <li>Assisted in assembling and shipping educational science kits for schools.</li>
-          <li>Planned project schedules and seasonal workflows to ensure timely completion of kits.</li>
-          <li>Provided customer service support and handled administrative tasks to maintain smooth operations.</li>
-          <li>Collaborated with team members to optimize efficiency and meet project deadlines.</li>
-        </ul>
+        <p class="job-story">My first job, at 18 &mdash; assembling and shipping educational science kits for schools around the country. I helped plan production schedules around seasonal demand, supported customers directly, and learned early what it actually takes to hit a deadline as part of a team. Not glamorous work, but it's where a lot of my work ethic got built.</p>
       </div>
 
     </div>
@@ -471,6 +564,15 @@
           <span class="chip">Legal Environment of Business</span>
         </div>
       </div>
+      <div style="margin-top:18px;">
+        <h3 style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brass); margin:0 0 12px; font-family:'Inter',sans-serif; font-weight:600;">Currently Taking</h3>
+        <div class="chip-row">
+          <span class="chip chip-progress">Intermediate Accounting</span>
+          <span class="chip chip-progress">Risk Analysis &amp; Insurance</span>
+          <span class="chip chip-progress">Production/Operations Management</span>
+          <span class="chip chip-progress">Management Information Systems</span>
+        </div>
+      </div>
       <div class="edu-grad" style="margin-top:16px;">Expected Graduation &mdash; May 2028</div>
     </div>
   </div>
@@ -490,24 +592,34 @@
       </div>
       <ul class="degree-list">
         <li>Completed a semester-long study abroad program based in a villa outside Florence, immersing in Italian language, history, and culture.</li>
-        <li>Independently planned and self-funded travel to 12 countries, including a self-directed backpacking trip through Spain, Ireland, England, Switzerland, Austria, Czechia, Germany, Norway, the Netherlands, Belgium, and France.</li>
-        <li>Managed personal budgeting, itinerary planning, and logistics across multiple currencies, languages, and transit systems.</li>
+        <li>Independently planned and self-funded a backpacking trip across Western Europe, managing logistics, budgeting, and itinerary across multiple currencies, languages, and transit systems.</li>
       </ul>
       <div style="margin-top:20px;">
-        <h3 style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brass); margin:0 0 12px; font-family:'Inter',sans-serif; font-weight:600;">Countries Visited</h3>
-        <div class="chip-row">
-          <span class="chip">Italy</span>
-          <span class="chip">Spain</span>
-          <span class="chip">Ireland</span>
-          <span class="chip">England</span>
-          <span class="chip">Switzerland</span>
-          <span class="chip">Austria</span>
-          <span class="chip">Czechia</span>
-          <span class="chip">Germany</span>
-          <span class="chip">Norway</span>
-          <span class="chip">Netherlands</span>
-          <span class="chip">Belgium</span>
-          <span class="chip">France</span>
+        <h3 style="font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--brass); margin:0 0 12px; font-family:'Inter',sans-serif; font-weight:600;">The Route</h3>
+        <div class="route-strip">
+          <div class="route-stop home"><span class="route-dot"></span><span class="route-name">Florence, Italy</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Spain</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Ireland</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">England</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Switzerland</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Austria</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Czechia</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Germany</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Norway</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Netherlands</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">Belgium</span></div>
+          <span class="route-arrow">&rarr;</span>
+          <div class="route-stop"><span class="route-dot"></span><span class="route-name">France</span></div>
         </div>
       </div>
     </div>
@@ -517,28 +629,34 @@
 <section id="skills">
   <div class="section-inner">
     <div class="eyebrow">Skills</div>
-    <h2 class="section-title">Tools &amp; strengths</h2>
+    <h2 class="section-title">Tools I actually use</h2>
     <div class="skills-grid">
       <div class="skills-col">
-        <h3>Platforms</h3>
-        <div class="chip-row">
-          <span class="chip">Microsoft Excel</span>
-          <span class="chip">Great Plains</span>
-          <span class="chip">Basecamp</span>
-          <span class="chip">Adobe Creative Suite</span>
-          <span class="chip">UPS Shipping &amp; Logistics</span>
-          <span class="chip">Google Docs</span>
-          <span class="chip">Claude Code</span>
+        <div class="skill-item">
+          <div class="skill-name">Microsoft Excel</div>
+          <div class="skill-context">Pivot tables, formulas, and basic financial models for coursework and small-business bookkeeping.</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Great Plains</div>
+          <div class="skill-context">Used daily at Lifeguard Press to update customer records and support account reconciliation.</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Basecamp</div>
+          <div class="skill-context">Logged quality-control results and tracked cross-team project status.</div>
         </div>
       </div>
       <div class="skills-col">
-        <h3>Core Strengths</h3>
-        <div class="chip-row">
-          <span class="chip">Leadership</span>
-          <span class="chip">Problem Solving</span>
-          <span class="chip">Communication</span>
-          <span class="chip">Time Management</span>
-          <span class="chip">Teamwork</span>
+        <div class="skill-item">
+          <div class="skill-name">Adobe Creative Suite</div>
+          <div class="skill-context">Basic design and layout work for smaller creative projects.</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">UPS Shipping &amp; Logistics</div>
+          <div class="skill-context">Managed outbound shipping and inventory flow for sample orders.</div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name">Google Workspace</div>
+          <div class="skill-context">Everyday tool for collaborative writing, planning, and documentation.</div>
         </div>
       </div>
     </div>
@@ -550,13 +668,41 @@
     <div class="eyebrow">Organizations</div>
     <h2 class="section-title">Involvement</h2>
     <ul class="org-list">
-      <li>ASI Distinguished Scholar and Officer</li>
-      <li>Delta Mu Delta Honor's Society</li>
-      <li>Student of Finance Association Member</li>
-      <li>Member, TNT Men's Social Club</li>
-      <li>Campus Ministry Connections Intern</li>
-      <li>Relay for Life Executive Committee</li>
+      <li>
+        <span class="org-title">ASI Distinguished Scholar and Officer</span>
+        <span class="org-desc">University-wide academic distinction; now serve as an officer helping plan events and represent the program to prospective students.</span>
+      </li>
+      <li>
+        <span class="org-title">Delta Mu Delta Honor's Society</span>
+        <span class="org-desc">International honor society for business students, with membership limited to top academic performers.</span>
+      </li>
+      <li>
+        <span class="org-title">Student of Finance Association Member</span>
+        <span class="org-desc">Regular attendee of speaker events and networking nights connecting finance students with industry professionals.</span>
+      </li>
+      <li>
+        <span class="org-title">Member, TNT Men's Social Club</span>
+        <span class="org-desc">Campus social club focused on brotherhood, community service, and campus involvement.</span>
+      </li>
+      <li>
+        <span class="org-title">Campus Ministry Connections Intern</span>
+        <span class="org-desc">Support outreach and engagement programming connecting incoming students to campus ministry.</span>
+      </li>
+      <li>
+        <span class="org-title">Relay for Life Executive Committee</span>
+        <span class="org-desc">Helped plan and run Harding's chapter of the American Cancer Society's annual fundraising event.</span>
+      </li>
     </ul>
+  </div>
+</section>
+
+<section id="projects" style="background: var(--ivory-dim);">
+  <div class="section-inner">
+    <div class="eyebrow">Projects</div>
+    <h2 class="section-title">What I'm building</h2>
+    <div class="project-empty">
+      More coming soon &mdash; this space is reserved for class projects, case competitions, and things I'm building on the side.
+    </div>
   </div>
 </section>
 
